@@ -1,3 +1,8 @@
 import './style.css'
 
-gsap.to('.orange', {duration:1,x:200, repeat:3,delay:2,repeatDelay:1,yoyo:true});
+gsap.to(".orange", {duration:3, x:600,ease:Bounce.easeOut});
+gsap.to(".pink", {duration:3, x:600,ease:Power3.easeIn});
+
+    
+    
+
