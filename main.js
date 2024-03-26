@@ -1,4 +1,3 @@
 import './style.css'
 
-gsap.fromTo('h1',{duration:1,x:-100,y:-100,rotation:-45},
-{duration:1,x:100,y:1100,rotation:45})
+gsap.to('.orange', {duration:1,x:200, repeat:3,delay:2,repeatDelay:1,yoyo:true});
