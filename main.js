@@ -1,8 +1,19 @@
 import './style.css'
 
-gsap.to(".orange", {duration:3, x:600,ease:Bounce.easeOut});
-gsap.to(".pink", {duration:3, x:600,ease:Power3.easeIn});
+gsap.from(".box", {y:-100,stagger:{
+  // amount:2,
+  each:0.2,
+  from:"edges" // center , edges
+}});
 
-    
-    
-
+document.querySelectorAll(".box").forEach(function(box) {
+  box.addEventListener("click", function() {
+    gsap.to(".box", {
+      duration: 0.5, 
+      opacity: 0, 
+      y: -100, 
+      stagger: 0.1,
+      ease: "back.in"
+    });
+  });
+});
