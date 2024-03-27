@@ -1,17 +1,13 @@
 import './style.css'
 
-const circle = document.querySelector(".circle")
-const bg = document.querySelector(".bg")
-
-
-let getter = gsap.getProperty(bg);
-let x = getter('width','vw')
-
-console.log(x)
-
-
-circle.addEventListener('mouseenter',()=>{
-  
-  console.log(gsap.getProperty(bg,'scale'));
-  gsap.fromTo(bg,{scale:0},{scale:1})
-})
+let timeline = gsap.timeline();
+timeline.from('.sun',{duration:3, opacity:0, x:50,y:50});
+timeline.from('.land',{duration:1, opacity:0, x:50,y:50},"-=1.5");
+timeline.from('.gress',{duration:1, opacity:0, y:50,stagger:{
+  each:0.2,
+  from:"center"
+}});
+timeline.from('.bird',{duration:1, opacity:0, y:50});
+timeline.from('.music',{duration:1, opacity:0, x:50,y:50},"<");
+timeline.from('.eye-left, .eye-right',{duration:1,x:30,repeat:-1,yoyo:true});
+timeline.to('.mouse',{scaleY:0,transformOrigin:'center center',repeat:-1,yoyo:true},"<");
