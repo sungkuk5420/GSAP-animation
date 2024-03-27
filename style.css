@@ -141,3 +141,42 @@ button:hover {
 .pink{
   background: hotpink;
 }
+body{
+  background: gray;
+}
+
+.circle{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 6px solid black;
+  overflow: hidden;
+}
+
+.bg{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: darkblue;
+}
+
+.circle span{
+  color: #fff;
+  font-size: 5vw;
+  position:relative;
+  z-index: 100;
+
+}

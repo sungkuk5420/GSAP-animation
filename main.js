@@ -1,19 +1,17 @@
 import './style.css'
 
-gsap.from(".box", {y:-100,stagger:{
-  // amount:2,
-  each:0.2,
-  from:"edges" // center , edges
-}});
+const circle = document.querySelector(".circle")
+const bg = document.querySelector(".bg")
 
-document.querySelectorAll(".box").forEach(function(box) {
-  box.addEventListener("click", function() {
-    gsap.to(".box", {
-      duration: 0.5, 
-      opacity: 0, 
-      y: -100, 
-      stagger: 0.1,
-      ease: "back.in"
-    });
-  });
-});
+
+let getter = gsap.getProperty(bg);
+let x = getter('width','vw')
+
+console.log(x)
+
+
+circle.addEventListener('mouseenter',()=>{
+  
+  console.log(gsap.getProperty(bg,'scale'));
+  gsap.fromTo(bg,{scale:0},{scale:1})
+})
